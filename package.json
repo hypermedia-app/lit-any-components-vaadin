@@ -4,6 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "prepare": "tsc",
+    "pretest": "npm run lint",
     "lint": "eslint --ext .ts .",
     "test": "karma start --coverage",
     "test:watch": "karma start --auto-watch=true --single-run=false",
