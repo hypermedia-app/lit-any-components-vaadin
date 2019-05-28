@@ -1,46 +1,42 @@
 {
-  "private": true,
-  "name": "lit-any",
-  "workspaces": [
-    "lit-any",
-    "components/*",
-    "test",
-    "storybook"
-  ],
-  "directories": {
-    "test": "tests"
-  },
+  "name": "@lit-any/components-vaadin",
+  "version": "0.8.0",
+  "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "test": "yarn lint && lerna run --scope tests test:es5:bs",
-    "test:local": "yarn lint && lerna run --scope tests test:local",
-    "lint": "lerna run lint",
-    "storybook": "lerna run --scope storybook storybook",
-    "build-storybook": "lerna run --scope storybook build-storybook"
+    "lint": "eslint --ext .ts .",
+    "test": "karma start --coverage",
+    "test:watch": "karma start --auto-watch=true --single-run=false",
+    "test:update-snapshots": "karma start --update-snapshots",
+    "test:prune-snapshots": "karma start --prune-snapshots",
+    "test:legacy": "karma start --legacy --coverage",
+    "test:legacy:watch": "karma start --legacy --auto-watch=true --single-run=false",
+    "test:bs": "karma start karma.bs.config.js --legacy --coverage",
+    "posttest": "cat ./coverage/coverage-final.json | yarn remap-istanbul -o ./coverage/lcov.info -t lcovonly -e ts"
+  },
+  "peerDependencies": {
+    "@lit-any/lit-any": ">= 0.7.0",
+    "lit-html": ">= 1"
+  },
+  "dependencies": {
+    "@vaadin/vaadin-button": "^2.1.1",
+    "@vaadin/vaadin-dropdown-menu": "^1.2.0",
+    "@vaadin/vaadin-list-box": "^1.1.0",
+    "@vaadin/vaadin-text-field": "^2.1.5"
   },
   "devDependencies": {
     "@open-wc/eslint-config": "^0.4.5",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
     "eslint": "^5.16.0",
-    "eslint-plugin-chai": "0.0.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jasmine": "^2.8.4",
     "eslint-plugin-lit": "^1.0.0",
-    "eslint-plugin-mocha": "^5.1.0",
-    "eslint-plugin-sinon": "^0.2.0",
-    "lerna": "^2.11.0",
-    "standard": "^12.0.1",
     "typescript": "^3.4.5",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@open-wc/testing": "^0.7.1",
-    "@open-wc/testing-karma": "^0.3.0",
-    "@open-wc/testing-karma-bs": "^0.1.4",
-    "karma-webpack": "^5.0.0-alpha.0",
-    "sinon": "^7.2.2",
+    "lit-html": "^1.1.0",
+    "@open-wc/testing-karma": "^2.0.0",
+    "webpack-merge": "^4.1.5",
+    "@open-wc/testing-karma-bs": "^1.0.0",
+    "@open-wc/testing": "^0.11.1",
     "@types/mocha": "^5.2.6",
-    "@types/sinon": "^7.0.12"
-  },
-  "dependencies": {
-    "eslint-import-resolver-lerna": "^1.1.0"
+    "standard": "^12.0.1"
   }
 }
