@@ -90,9 +90,7 @@ fabric.properties
 *.es5.js
 /browserstack.err
 
-components/**/*.js
-components/**/*.js.map
-lit-any/**/*.js
-lit-any/**/*.js.map
+*.js
+*.js.map
 *.d.ts
 !karma*.js

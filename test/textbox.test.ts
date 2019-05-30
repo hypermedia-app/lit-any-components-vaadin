@@ -1,5 +1,5 @@
 import { expect } from '@open-wc/testing'
-import * as components from '..'
+import components from '..'
 import render from './helper/render'
 
 describe('vaadin components', () => {

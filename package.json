@@ -1,12 +1,17 @@
 {
   "name": "@lit-any/components-vaadin",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "main": "index.js",
+  "files": [
+    "*.d.ts",
+    "*.js.map",
+    "*.js"
+  ],
   "license": "MIT",
   "scripts": {
     "prepare": "tsc",
     "pretest": "npm run lint",
-    "lint": "eslint --ext .ts .",
+    "lint": "eslint --ext .ts . --quiet",
     "test": "karma start --coverage",
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "test:update-snapshots": "karma start --update-snapshots",
@@ -14,13 +19,14 @@
     "test:legacy": "karma start --legacy --coverage",
     "test:legacy:watch": "karma start --legacy --auto-watch=true --single-run=false",
     "test:bs": "karma start karma.bs.config.js --legacy --coverage",
-    "posttest": "cat ./coverage/coverage-final.json | yarn remap-istanbul -o ./coverage/lcov.info -t lcovonly -e ts"
+    "posttest": "cat ./coverage/coverage-final.json | remap-istanbul -o ./coverage/lcov.info -t lcovonly"
   },
   "peerDependencies": {
     "@lit-any/lit-any": ">= 0.7.0",
     "lit-html": ">= 1"
   },
   "dependencies": {
+    "@lit-any/forms": "git+https://github.com/hypermedia-app/lit-any-forms.git",
     "@vaadin/vaadin-button": "^2.1.1",
     "@vaadin/vaadin-dropdown-menu": "^1.2.0",
     "@vaadin/vaadin-list-box": "^1.1.0",
@@ -34,11 +40,12 @@
     "eslint-plugin-lit": "^1.0.0",
     "typescript": "^3.4.5",
     "lit-html": "^1.1.0",
-    "@open-wc/testing-karma": "^2.0.0",
+    "@open-wc/testing-karma": "^2.0.3",
     "webpack-merge": "^4.1.5",
-    "@open-wc/testing-karma-bs": "^1.0.0",
-    "@open-wc/testing": "^0.11.1",
+    "@open-wc/testing-karma-bs": "^1.1.3",
+    "@open-wc/testing": "^0.12.5",
     "@types/mocha": "^5.2.6",
-    "standard": "^12.0.1"
+    "standard": "^12.0.1",
+    "remap-istanbul": "^0.13.0"
   }
 }

@@ -30,14 +30,5 @@
   ],
   "env": {
     "browser": true
-  },
-  "overrides":[
-    {
-      "files": "*.test.ts",
-      "rules": {
-        "import/no-extraneous-dependencies": "off",
-        "no-unused-expressions": "off"
-      }
-    }
-  ]
+  }
 }
