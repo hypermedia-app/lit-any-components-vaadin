@@ -1,4 +1,5 @@
 import { expect } from '@open-wc/testing'
+import '@vaadin/vaadin-text-field/vaadin-text-field'
 import components from '..'
 import render from './helper/render'
 
@@ -7,10 +8,6 @@ describe('vaadin components', () => {
 
     describe('textbox', () => {
         describe('single line', () => {
-            before(async () => {
-                await import('@vaadin/vaadin-text-field/vaadin-text-field')
-            })
-
             beforeEach(() => {
                 opts = {
                     type: 'single line',

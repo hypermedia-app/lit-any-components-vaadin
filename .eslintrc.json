@@ -17,7 +17,8 @@
     "comma-dangle": [
       "error",
       "always-multiline"
-    ]
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off"
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
