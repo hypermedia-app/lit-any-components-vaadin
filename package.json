@@ -1,12 +1,17 @@
 {
   "name": "@lit-any/components-vaadin",
-  "version": "0.9.0",
+  "version": "0.9.0-a1",
   "main": "index.js",
   "files": [
     "*.d.ts",
     "*.js.map",
     "*.js"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hypermedia-app/lit-any-components-vaadin"
+  },
+  "homepage": "https://lit-any.hypermedia.app/",
   "license": "MIT",
   "scripts": {
     "prepare": "tsc",
@@ -22,10 +27,11 @@
     "posttest": "cat ./coverage/coverage-final.json | remap-istanbul -o ./coverage/lcov.info -t lcovonly"
   },
   "peerDependencies": {
-    "lit-html": ">= 1"
+    "lit-html": ">= 1",
+    "lit-element": ">= 2"
   },
   "dependencies": {
-    "@lit-any/forms": "git+https://github.com/hypermedia-app/lit-any-forms.git",
+    "@lit-any/forms": "^0.9.0-a1",
     "@vaadin/vaadin-button": "^2.1.1",
     "@vaadin/vaadin-dropdown-menu": "^1.2.0",
     "@vaadin/vaadin-list-box": "^1.1.0",
@@ -45,6 +51,7 @@
     "@open-wc/testing": "^0.12.5",
     "@types/mocha": "^5.2.6",
     "standard": "^12.0.1",
-    "remap-istanbul": "^0.13.0"
+    "remap-istanbul": "^0.13.0",
+    "lit-element": "^2.1.0"
   }
 }
