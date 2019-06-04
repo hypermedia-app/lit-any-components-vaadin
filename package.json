@@ -23,7 +23,7 @@
     "test:prune-snapshots": "karma start --prune-snapshots",
     "test:legacy": "karma start --legacy --coverage",
     "test:legacy:watch": "karma start --legacy --auto-watch=true --single-run=false",
-    "test:bs": "karma start karma.bs.config.js --legacy --coverage",
+    "test:bs": "karma start karma.bs.config.js --legacy --grep 'test/**/*.test.js'",
     "posttest": "cat ./coverage/coverage-final.json | remap-istanbul -o ./coverage/lcov.info -t lcovonly"
   },
   "peerDependencies": {
@@ -35,6 +35,7 @@
     "@vaadin/vaadin-button": "^2.1.1",
     "@vaadin/vaadin-dropdown-menu": "^1.2.0",
     "@vaadin/vaadin-list-box": "^1.1.0",
+    "@vaadin/vaadin-item": "^2.1.0",
     "@vaadin/vaadin-text-field": "^2.1.5"
   },
   "devDependencies": {

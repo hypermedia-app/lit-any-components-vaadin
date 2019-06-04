@@ -3,8 +3,8 @@ import '@vaadin/vaadin-dropdown-menu/vaadin-dropdown-menu'
 import '@vaadin/vaadin-list-box/vaadin-list-box'
 import '@vaadin/vaadin-item/vaadin-item'
 import dropdown from '../dropdown'
-import render from './helper/render'
-import { delay } from './helper/async'
+import render from '../test/helper/render'
+import { delay } from '../test/helper/async'
 
 describe('dropdown', () => {
     it('accepts items as () => Promise', async () => {
