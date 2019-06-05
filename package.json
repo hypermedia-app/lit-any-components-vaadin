@@ -1,6 +1,6 @@
 {
   "name": "@lit-any/components-vaadin",
-  "version": "0.9.0-a2",
+  "version": "0.9.0",
   "main": "index.js",
   "files": [
     "*.d.ts",
@@ -31,7 +31,7 @@
     "lit-html": ">= 1"
   },
   "dependencies": {
-    "@lit-any/forms": "^0.9.0-a1",
+    "@lit-any/forms": "^0.9.0",
     "@vaadin/vaadin-button": "^2.1.1",
     "@vaadin/vaadin-dropdown-menu": "^1.2.0",
     "@vaadin/vaadin-item": "^2.1.0",

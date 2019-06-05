@@ -7,7 +7,6 @@ before_install:
 script:
   - npm run test
   - npm run test:bs
-  - npm run posttest
 after_success:
   - codecov
 after_failure:
