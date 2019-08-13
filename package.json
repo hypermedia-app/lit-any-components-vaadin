@@ -15,7 +15,6 @@
   "license": "MIT",
   "scripts": {
     "prepare": "tsc",
-    "pretest": "npm run lint",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "test": "karma start --coverage",
     "test:compatibility": "karma start --compatibility all --auto-watch=true --single-run=false",
@@ -25,8 +24,8 @@
     "test:legacy": "karma start --compatibility all --coverage",
     "test:legacy:watch": "karma start --compatibility all --auto-watch=true --single-run=false",
     "test:bs": "karma start karma.bs.config.js --compatibility all --grep 'test/**/*.test.js'",
-    "lint:eslint": "eslint --ext .html,.ts . --ignore-path .gitignore",
-    "format:eslint": "eslint --ext .html,.ts . --fix --ignore-path .gitignore",
+    "lint:eslint": "eslint --ext .html,.ts . --ignore-path .gitignore --quiet",
+    "format:eslint": "eslint --ext .html,.ts . --fix --ignore-path .gitignore --quiet",
     "lint:prettier": "prettier \"**/*.{js,ts}\" --check --ignore-path .gitignore",
     "format:prettier": "prettier \"**/*.{js,ts}\" --write --ignore-path .gitignore",
     "format": "npm run format:eslint && npm run format:prettier",
