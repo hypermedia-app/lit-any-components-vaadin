@@ -12,5 +12,8 @@ module.exports = config => {
     }),
   )
 
+  // eslint-disable-next-line no-param-reassign
+  config.concurrency = 1
+
   return config
 }
