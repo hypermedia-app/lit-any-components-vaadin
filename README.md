@@ -5,5 +5,5 @@ Vaadin form components for `@lit-any/forms`
 ## Installation
 
 ```
-npm i --save @lit-any/components-vaadin lit-html lit-element
+npm i --save @lit-any/components-vaadin @lit-any/forms lit-html lit-element
 ```
