@@ -52,7 +52,7 @@
     "@open-wc/testing-karma": "^3.1.15",
     "@open-wc/testing-karma-bs": "^1.1.40",
     "@types/mocha": "^5.2.6",
-    "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.7.0",
     "@lit-any/forms": "^0.10.0",
     "eslint": "^5.16.0",
