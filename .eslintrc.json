@@ -7,6 +7,7 @@
   "root": true,
   "rules": {
     "indent": "off",
+    "import/extensions": "off",
     "import/no-unresolved": "warn",
     "space-before-function-paren": [
       "error",
@@ -18,7 +19,9 @@
       "error",
       "always-multiline"
     ],
-    "@typescript-eslint/explicit-function-return-type": "off"
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": ["error", 2],
+    "implicit-arrow-linebreak": "off"
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
