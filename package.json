@@ -16,7 +16,7 @@
   "scripts": {
     "prepare": "tsc",
     "pretest": "npm run lint",
-    "lint": "eslint --ext .ts . --quiet",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
     "test": "karma start --coverage",
     "test:compatibility": "karma start --compatibility all --auto-watch=true --single-run=false",
     "test:watch": "karma start --auto-watch=true --single-run=false",
@@ -24,7 +24,13 @@
     "test:prune-snapshots": "karma start --prune-snapshots",
     "test:legacy": "karma start --compatibility all --coverage",
     "test:legacy:watch": "karma start --compatibility all --auto-watch=true --single-run=false",
-    "test:bs": "karma start karma.bs.config.js --compatibility all --grep 'test/**/*.test.js'"
+    "test:bs": "karma start karma.bs.config.js --compatibility all --grep 'test/**/*.test.js'",
+    "lint:eslint": "eslint --ext .html,.ts . --ignore-path .gitignore",
+    "format:eslint": "eslint --ext .html,.ts . --fix --ignore-path .gitignore",
+    "lint:prettier": "prettier \"**/*.{js,ts}\" --check --ignore-path .gitignore",
+    "format:prettier": "prettier \"**/*.{js,ts}\" --write --ignore-path .gitignore",
+    "format": "npm run format:eslint && npm run format:prettier",
+    "release": "standard-version"
   },
   "peerDependencies": {
     "lit-element": ">= 2",
@@ -56,6 +62,33 @@
     "lit-html": "^1.1.0",
     "standard": "^12.0.1",
     "typescript": "^3.4.5",
-    "webpack-merge": "^4.1.5"
+    "webpack-merge": "^4.1.5",
+    "@open-wc/prettier-config": "^0.1.10",
+    "husky": "^1.0.0",
+    "lint-staged": "^8.0.0",
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@open-wc/eslint-config",
+      "eslint-config-prettier"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

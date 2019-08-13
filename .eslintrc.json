@@ -19,7 +19,8 @@
       "error",
       "always-multiline"
     ],
-    "@typescript-eslint/explicit-function-return-type": "off"
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/indent": ["error", 2]
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
